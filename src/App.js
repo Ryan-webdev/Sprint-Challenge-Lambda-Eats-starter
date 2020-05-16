@@ -10,8 +10,7 @@ const App = () => {
         <Link to="/">Home</Link>
         <Link to="/pizza">Order Here</Link>
       </nav>
-      <Route exact path="/" component={App}/>
-      <Route path="/pizza" component={PizzaForm} />
+      <Route path="/pizza" data-cy="Order" component={PizzaForm} />
     </div>
   );
 };

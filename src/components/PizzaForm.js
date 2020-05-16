@@ -110,6 +110,7 @@ export default function PizzaForm (){
           name='name'
           value={formState.name}
           onChange={inputChange}
+          data-cy="name-input"
         />
         {errorState.name.length > 0 ? <p className='error'>{errorState.name}</p> : null}
       </label>
@@ -128,6 +129,7 @@ export default function PizzaForm (){
           name='pepperoni'
           checked={formState.pepperoni}
           onChange={inputChange}
+          data-cy="checkbox"
         />
         pepperoni
       </label>
@@ -137,6 +139,7 @@ export default function PizzaForm (){
           name='cheese'
           checked={formState.cheese}
           onChange={inputChange}
+          data-cy="checkbox"
         />
         cheese
       </label>
@@ -146,6 +149,7 @@ export default function PizzaForm (){
           name='sausage'
           checked={formState.sausage}
           onChange={inputChange}
+          data-cy="checkbox"
         />
         sausage
       </label>
@@ -155,6 +159,7 @@ export default function PizzaForm (){
           name='onions'
           checked={formState.onions}
           onChange={inputChange}
+          data-cy="checkbox"
         />
         onions
       </label>
@@ -169,7 +174,7 @@ export default function PizzaForm (){
       </label>
       {/* displaying our post request data */}
       <pre>{JSON.stringify(pizza, null, 2)}</pre>
-      <button disabled={disabled}>Submit</button>
+      <button disabled={disabled} data-cy="submit">Submit</button>
     </form>
     );
 }
