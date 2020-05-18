@@ -102,28 +102,31 @@ export default function PizzaForm (){
 
 
     return(
-        <form onSubmit={formSubmit}>
+     
+        <form onSubmit={formSubmit} style={{margin: "2%"}}>
+         <h3 style={{marginLeft:"35%"}}>Build your own Pizza</h3>
       <label htmlFor='name'>
-        Name
+        Name: 
         <input
           type='text'
           name='name'
           value={formState.name}
           onChange={inputChange}
           data-cy="name-input"
+          style={{marginLeft: "1%"}}
         />
         {errorState.name.length > 0 ? <p className='error'>{errorState.name}</p> : null}
       </label>
-      <label htmlFor='pizzaSize'>
+      <label htmlFor='pizzaSize' style={{marginLeft: "2%"}}>
         What size pizza would you like?
-        <select id='pizzaSize' name='pizzaSize' onChange={inputChange}>
+        <select id='pizzaSize' name='pizzaSize' onChange={inputChange} style={{marginLeft: "2%"}}>
           <option value='select'>--select option--</option>
           <option value='small'>small</option>
           <option value='medium'>medium</option>
           <option value='large'>large</option>
         </select>
       </label>
-      <label htmlFor='pepperoni' className='pepperoni'>
+      <label htmlFor='pepperoni' className='pepperoni' style={{marginLeft: "2%"}}>
         <input
           type='checkbox'
           name='pepperoni'
@@ -133,7 +136,7 @@ export default function PizzaForm (){
         />
         pepperoni
       </label>
-      <label htmlFor='cheese' className='cheese'>
+      <label htmlFor='cheese' className='cheese' style={{marginLeft: "2%"}}>
         <input
           type='checkbox'
           name='cheese'
@@ -143,7 +146,7 @@ export default function PizzaForm (){
         />
         cheese
       </label>
-      <label htmlFor='sausage' className='sausage'>
+      <label htmlFor='sausage' className='sausage' style={{marginLeft: "2%"}}>
         <input
           type='checkbox'
           name='sausage'
@@ -153,7 +156,7 @@ export default function PizzaForm (){
         />
         sausage
       </label>
-      <label htmlFor='onions' className='onions'>
+      <label htmlFor='onions' className='onions' style={{marginLeft: "2%"}}>
         <input
           type='checkbox'
           name='onions'
@@ -163,18 +166,19 @@ export default function PizzaForm (){
         />
         onions
       </label>
-      <label htmlFor='instructions'>
+      <label htmlFor='instructions' style={{marginLeft: "2%"}}>
         any special instructions?
         <input
           type='text'
           name='instructions'
           value={formState.instructions}
           onChange={inputChange}
+          style={{marginLeft: "1%"}}
         />
       </label>
       {/* displaying our post request data */}
       <pre>{JSON.stringify(pizza, null, 2)}</pre>
-      <button disabled={disabled} data-cy="submit">Submit</button>
+      <button disabled={disabled} data-cy="submit">Add to Order</button>
     </form>
     );
 }
